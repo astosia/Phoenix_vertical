@@ -11,6 +11,25 @@ module.exports = [
         "type": "heading",
         "defaultValue": "Theme settings"
       },
+      {
+        "type": "toggle",
+        "messageKey": "HealthOff",
+        "label": "Switch off Steps",
+        "defaultValue": true,
+        "capabilities":["HEALTH"]
+      },
+      {
+        "type": "toggle",
+        "messageKey": "AddZero12h",
+        "label": "Add leading zero to 12h time",
+        "defaultValue": false
+      },
+      {
+        "type": "toggle",
+        "messageKey": "RemoveZero24h",
+        "label": "Remove leading zero from 24h time",
+        "defaultValue": false
+      },
   /*    {
         "type":"toggle",
         "messageKey":"Rotate",
@@ -22,7 +41,7 @@ module.exports = [
            "messageKey": "RightLeft",
           "label": "Rotation direction",
           "description": "On to rotate Right/clockwise, off to rotate Left/anti-clockwise.",
-             "defaultValue": true,        
+             "defaultValue": true,
            },
       {
         "type": "color",
@@ -71,7 +90,7 @@ module.exports = [
         "messageKey": "MinColor",
         "defaultValue": "0xFFFFAA",
         "label": "Minute Text Colour"
-      }, 
+      },
       {
         "type": "color",
         "messageKey": "Text1Color",
@@ -83,25 +102,33 @@ module.exports = [
         "messageKey": "Text5Color",
         "defaultValue": "0xFFFFFF",
         "label": "Wind Colour"
-      }, 
+      },
       {
         "type": "color",
         "messageKey": "Text3Color",
         "defaultValue": "0xFFFFFF",
         "label": "Day & Battery Colour"
-      }, 
+      },
       {
         "type": "color",
         "messageKey": "Text6Color",
         "defaultValue": "0xFFFFFF",
         "label": "Date Colour"
-      }, 
+      },
+      {
+        "type": "color",
+        "messageKey": "Text4Color",
+        "defaultValue": "0xFFFFFF",
+        "label": "Steps Colour",
+        "allowGray":true,
+        "capabilities":["HEALTH"]
+      },
        {
         "type": "color",
         "messageKey": "Text2Color",
         "defaultValue": "0xFFFFFF",
         "label": "Sunset & Moon Colour"
-      }, 
+      },
       /*{
         "type":"color",
         "messageKey":"Text4Color",
@@ -119,7 +146,7 @@ module.exports = [
            "type": "toggle",
            "messageKey": "NightTheme",
            "label": "Activate Night Theme",
-           "defaultValue": false,        
+           "defaultValue": false,
          },
          /*{
            "type": "color",
@@ -168,19 +195,19 @@ module.exports = [
         "messageKey": "MinColorN",
         "defaultValue": "0x000000",
         "label": "Minute Text Colour"
-      }, 
+      },
          {
            "type": "color",
            "messageKey": "Text1ColorN",
            "defaultValue": "0x000000",
            "label": "Weather Colour"
-         }, 
+         },
        {
            "type": "color",
            "messageKey": "Text5ColorN",
            "defaultValue": "0x000000",
            "label": "Wind Colour"
-         }, 
+         },
          {
            "type": "color",
            "messageKey": "Text3ColorN",
@@ -192,13 +219,21 @@ module.exports = [
         "messageKey": "Text6ColorN",
         "defaultValue": "0x000000",
         "label": "Date Colour"
-      }, 
+      },
+      {
+        "type": "color",
+        "messageKey": "Text4ColorN",
+        "defaultValue": "0x000000",
+        "label": "Steps Colour",
+        "allowGray":true,
+        "capabilities":["HEALTH"]
+      },
           {
         "type": "color",
         "messageKey": "Text2ColorN",
         "defaultValue": "0x000000",
         "label": "Sunset & Moon Colour"
-      }, 
+      },
          /*{
            "type":"color",
            "messageKey":"Text4ColorN",
@@ -215,7 +250,7 @@ module.exports = [
           {
             "type": "heading",
             "defaultValue": "Weather settings"
-          },     
+          },
           {
             "type": "toggle",
             "messageKey": "WeatherUnit",
@@ -255,10 +290,6 @@ module.exports = [
               {
                 "label": "OpenWeatherMap",
                 "value": "owm"
-              },
-              {
-                "label": "WeatherUnderground",
-                "value": "wu"
               },
               {
                 "label": "DarkSky",
