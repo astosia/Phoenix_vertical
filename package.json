@@ -13,7 +13,7 @@
             "configurable",
             "health"
         ],
-        "displayName": "phoenix vertical",
+        "displayName": "phoenix too",
         "enableMultiJS": true,
         "messageKeys": [
             "Back1Color",
@@ -66,6 +66,10 @@
             "Rotate",
             "MoonPhase",
             "WEATHER_SUNRISE_KEY",
+            "WEATHER_SUNSET_KEY_12H",
+            "WEATHER_SUNRISE_KEY_12H",
+            "Lat",
+            "Long",
             "FrameColor1",
             "FrameColor2",
             "FrameColor1N",
@@ -154,5 +158,5 @@
             "watchface": true
         }
     },
-    "version": "1.8.0"
+    "version": "2.0"
 }
